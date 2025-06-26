@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kawartha | A City in Motion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #ffffff;
+      color: #2a2a2a;
+    }
+    header {
+      background: #004e5a;
+      color: white;
+      padding: 1rem 2rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    nav {
+      background: #007c91;
+      padding: 0.5rem 2rem;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    nav .dropdown {
+      position: relative;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 0;
+      display: block;
+    }
+    nav .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background: #005e6a;
+      padding: 0.5rem 1rem;
+      margin-top: 0.5rem;
+      border-radius: 4px;
+      z-index: 1000;
+    }
+    .dropdown-menu a {
+      color: white;
+      display: block;
+      padding: 0.25rem 0;
+    }
+    .banner {
+      background: url('https://raw.githubusercontent.com/ronalderson/kawartha-site/main/assets/banner.jpg') no-repeat center/cover;
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2.2rem;
+      font-weight: bold;
+    }
+    .notices-container {
+      padding: 1rem 2rem;
+    }
+    .notices-container h2 {
+      color: #004e5a;
+      margin-bottom: 0.5rem;
+    }
+    .notices {
+      background: #f4f8f9;
+      padding: 1rem;
+      overflow: hidden;
+      position: relative;
+      height: 2rem;
+      font-weight: 500;
+    }
+    .notices .notice-line {
+      position: absolute;
+      width: 100%;
+      opacity: 0;
+      animation: flashNotice 16s linear infinite;
+    }
+    .notices .notice-line:nth-child(1) { animation-delay: 0s; }
+    .notices .notice-line:nth-child(2) { animation-delay: 4s; }
+    .notices .notice-line:nth-child(3) { animation-delay: 8s; }
+    .notices .notice-line:nth-child(4) { animation-delay: 12s; }
+
+    @keyframes flashNotice {
+      0% { opacity: 0; transform: translateY(100%); }
+      5% { opacity: 1; transform: translateY(0); }
+      25% { opacity: 1; transform: translateY(0); }
+      30% { opacity: 0; transform: translateY(-100%); }
+      100% { opacity: 0; }
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: #f4f8f9;
+      padding: 1.5rem;
+      border: 1px solid #cdd9dc;
+      border-radius: 6px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .card h2 {
+      font-size: 1.25rem;
+      color: #004e5a;
+      margin-bottom: 0.5rem;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #444;
+    }
+    footer {
+      background: #004e5a;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kawartha</h1>
+  </header>
+  <nav>
+    <div class="dropdown">
+      <a href="index.html">Home</a>
+    </div>
+    <div class="dropdown">
+      <a href="districts.html">Districts</a>
+      <div class="dropdown-menu">
+        <a href="districts.html#downtown">Downtown</a>
+        <a href="districts.html#parker">Parker Avenue</a>
+        <a href="districts.html#eastbay">East Bay</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="transit.html">Transit</a>
+      <div class="dropdown-menu">
+        <a href="transit.html#metro">Metro</a>
+        <a href="transit.html#bus">Bus</a>
+        <a href="transit.html#train">Train</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="stats.html">City Stats</a>
+    </div>
+    <div class="dropdown">
+      <a href="gallery.html">Gallery</a>
+    </div>
+    <div class="dropdown">
+      <a href="blog.html">Blog</a>
+    </div>
+  </nav>
+  <div class="banner">Kawartha: A City in Motion</div>
+  <div class="notices-container">
+    <h2>News & Notices</h2>
+    <div class="notices">
+      <div class="notice-line"><a href="transit.html#bus">New bus rapid transit line opens in east Kawartha.</a></div>
+      <div class="notice-line"><a href="districts.html#downtown">Downtown revitalization project begins July 10.</a></div>
+      <div class="notice-line"><a href="gallery.html">Waterfront park expansion receives community funding.</a></div>
+      <div class="notice-line"><a href="blog.html">Community feedback survey now open for August planning cycle.</a></div>
+    </div>
+  </div>
+  <main>
+    <div class="grid">
+      <a class="card" href="districts.html">
+        <h2>Explore Districts</h2>
+        <p>Discover the neighborhoods and unique zones of Kawartha.</p>
+      </a>
+      <a class="card" href="transit.html">
+        <h2>Transit Map</h2>
+        <p>See how trains, metro, buses, and monorails connect the city.</p>
+      </a>
+      <a class="card" href="stats.html">
+        <h2>City Stats</h2>
+        <p>Population, budget, traffic flow and more insights.</p>
+      </a>
+      <a class="card" href="gallery.html">
+        <h2>Gallery</h2>
+        <p>Browse beautiful screenshots of Kawartha in motion.</p>
+      </a>
+      <a class="card" href="blog.html">
+        <h2>Development Blog</h2>
+        <p>Follow the mayor’s updates and future expansion plans.</p>
+      </a>
+    </div>
+  </main>
+  <footer>
+    &copy; 2025 City of Kawartha | Inspired by Kenora.ca
+  </footer>
+</body>
+</html>
